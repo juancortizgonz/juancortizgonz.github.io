@@ -1,0 +1,43 @@
+---
+const title = '@juancortizgonz';
+
+const links = [
+    {
+        url: 'https://linkedin.com/in/juancortizgonz',
+        text: 'LinkedIn',
+        svg: 'src/assets/linkedin.svg'
+    },
+    {
+        url: 'https://x.com/juancortizgonz',
+        text: 'X',
+        svg: 'src/assets/x.svg'
+    },
+    {
+        url: 'https://github.com/juancortizgonz',
+        text: 'GitHub',
+        svg: 'src/assets/github.svg'
+    }
+];
+---
+
+<header class="flex justify-between">
+    <a href="/">
+        <span class="md:text-lg font-bold">{title}</span>
+    </a>
+
+    <nav class="flex justify-between items-center w-32">
+        {
+            links.map(link => {
+                return (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                        <img 
+                            src={link.svg} 
+                            alt={link.text} 
+                            width="25" 
+                        />
+                    </a>
+                )
+            })
+        }
+    </nav>
+</header>
