@@ -1,0 +1,31 @@
+---
+const { title, description, tags, code, demo, image } = Astro.props;
+---
+
+<article class="my-8">
+    <img src={image} alt={title} class="rounded-lg w-full object-cover">
+    <h3 class="font-bold text-lg">{title}</h3>
+    <div class="flex space-x-2 py-3">
+        {
+            tags.map((tag: { image: string, name: string, color: string, }) => {
+                return <button class={`text-xs text-white flex justify-center items-center bg-[${tag.color}] px-3 py-1 rounded-full`}>
+                        <img src={tag.image} width="16">
+                        {tag.name}
+                    </button>
+            })
+        }
+    </div>
+    <p class="font-mono text-xs mb-2">
+        {description}
+    </p>
+    <div class="flex justify-items-start space-x-4">
+        <a href={code} class="flex">
+            <img src="src/assets/github.svg" class="mr-1" width="16" alt="GitHub logo">
+            Code
+        </a>
+        <a href={demo} class="flex">
+            <img src="src/assets/linkedin.svg" class="mr-1" width="16" alt="External link logo">
+            Demo
+        </a>
+    </div>
+</article>

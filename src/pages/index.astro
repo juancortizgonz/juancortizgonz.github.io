@@ -2,11 +2,101 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+	{
+		title: 'Project 1',
+		description: 'This is a project description',
+		tags: [
+			{
+				name: 'HTML5',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'CSS3',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'JavaScript',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+		],
+		code: 'https://github.com',
+		demo: 'https://example.com',
+		image: 'https://i.redd.it/j2k3uzstwuab1.png',
+	},
+	{
+		title: 'Project 2',
+		description: 'This is a project description',
+		tags: [
+			{
+				name: 'HTML5',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'CSS3',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'TypeScript',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+		],
+		code: 'https://github.com',
+		demo: 'https://example.com',
+		image: 'https://i.redd.it/j2k3uzstwuab1.png',
+	},
+	{
+		title: 'Project 3',
+		description: 'This is a project description',
+		tags: [
+			{
+				name: 'HTML5',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'CSS3',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+			{
+				name: 'JavaScript',
+				image: 'src/assets/arrow-right.svg',
+				color: '#000',
+			},
+		],
+		code: 'https://github.com',
+		demo: 'https://example.com',
+		image: 'https://i.redd.it/j2k3uzstwuab1.png',
+	},
+];
 ---
 
 <Layout>
 	<main>
 		<Header />
 		<Hero />
+		<section class="container mx-auto px-4 py-8">
+			<h2 class="text-[#dd9c3c] font-bold text-xl">My Projects</h2>
+			<div>
+				{
+					projects.map(project => {
+						return (
+						<ProjectCard {...project} />
+						<div class="w-3/4 mx-auto h-0.5 bg-gray-700"></div>
+					)	
+					})
+				}
+			</div>
+			<p class="font-mono mt-5 text-center">You can follow my progress in <a href="https://x.com/juancortizgonz" class="underline" target="_blank">my 𝕏 account</a>, where I try to build in public</p>
+		</section>
 	</main>
 </Layout>
