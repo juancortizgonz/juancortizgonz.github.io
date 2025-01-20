@@ -8,76 +8,52 @@ import Contact from '../components/Contact.astro';
 
 const projects = [
 	{
-		title: 'Project 1',
-		description: 'This is a project description',
+		title: 'RESTful API for intelligent ambulance management software',
+		description: 'Transform medical emergency management with an API designed to optimize every second. This intelligent solution, developed with Django and Django Rest Framework, efficiently allocates ambulances thanks to advanced algorithms and route calculation using Google Maps API. With a robust PostgreSQL database and token-based authentication, it ensures security, reliability and superior performance.',
 		tags: [
 			{
-				name: 'HTML5',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
+				name: 'Django',
+				image: 'src/assets/django.svg',
+				color: '#0C3C26',
 			},
 			{
-				name: 'CSS3',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
+				name: 'Django Rest Framework',
+				image: '',
+				color: '#ea4f4f',
 			},
 			{
-				name: 'JavaScript',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
+				name: 'PostgreSQL',
+				image: 'src/assets/postgres.svg',
+				color: '#336791;',
 			},
 		],
-		code: 'https://github.com',
+		code: 'https://github.com/juancortizgonz/backend-ambulance-system',
 		demo: 'https://example.com',
-		image: 'https://i.redd.it/j2k3uzstwuab1.png',
+		image: 'src/assets/projects/backend-ambulance-system-project.svg',
 	},
 	{
-		title: 'Project 2',
-		description: 'This is a project description',
+		title: 'Frontend for intelligent ambulance management software',
+		description: 'The project uses React with TypeScript to develop a modern and efficient interface. Styles are implemented with Tailwind CSS, and components come from Shadcn/UI to ensure an attractive and functional design. It includes key functionalities such as real-time ambulance visualization on maps, interactive dashboards and dynamic reports, integrated with the backend via Fetch API. Context API manages the state of the application, while techniques such as lazy loading improve performance. In addition, the frontend is designed to be tested with unit and end-to-end testing, ensuring a smooth and reliable experience.',
 		tags: [
-			{
-				name: 'HTML5',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
-			},
-			{
-				name: 'CSS3',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
-			},
 			{
 				name: 'TypeScript',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
+				image: 'src/assets/typescript.svg',
+				color: '#235a97',
+			},
+			{
+				name: 'Vite',
+				image: 'src/assets/vite.svg',
+				color: '#101010',
+			},
+			{
+				name: 'React',
+				image: 'src/assets/react.svg',
+				color: '#087ea4',
 			},
 		],
-		code: 'https://github.com',
-		demo: 'https://example.com',
-		image: 'https://i.redd.it/j2k3uzstwuab1.png',
-	},
-	{
-		title: 'Project 3',
-		description: 'This is a project description',
-		tags: [
-			{
-				name: 'HTML5',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
-			},
-			{
-				name: 'CSS3',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
-			},
-			{
-				name: 'JavaScript',
-				image: 'src/assets/arrow-right.svg',
-				color: '#000',
-			},
-		],
-		code: 'https://github.com',
-		demo: 'https://example.com',
-		image: 'https://i.redd.it/j2k3uzstwuab1.png',
+		code: 'https://github.com/juancortizgonz/frontend-ambulance-system',
+		demo: 'https://github.com/juancortizgonz/frontend-ambulance-system',
+		image: 'src/assets/projects/frontend-ambulance-system-project.svg',
 	},
 ];
 ---
@@ -86,14 +62,13 @@ const projects = [
 	<main>
 		<Header />
 		<Hero />
-		<section class="container mx-auto px-4 py-8">
-			<h2 class="text-black font-bold text-xl">My Projects</h2>
-			<div>
+		<section class="container mx-auto px-4 py-8 md:items-center">
+			<h2 class="text-black font-bold text-3xl">My Projects</h2>
+			<div class="lg:grid lg:grid-cols-2 lg:place-items-center mt-4 mx-auto">
 				{
 					projects.map(project => {
 						return (
 						<ProjectCard {...project} />
-						<div class="w-3/4 mx-auto h-0.5 bg-gray-700"></div>
 					)	
 					})
 				}
@@ -102,7 +77,7 @@ const projects = [
 		</section>
 		<AboutMe />
 		<Contact />
-		<footer>
+		<footer class="py-4">
 			<p class="text-center text-gray-500 text-xs">Made with 💛 and Astro. Special thanks to <a href="https://www.youtube.com/@midudev/" class="underline" target="_blank" rel="nofollow">@midudev</a>. Design inspired by <a href="https://www.figma.com/community/file/1072882706863217536" class="underline" target="_blank" rel="nofollow">Freddy Montes</a>.</p>
 		</footer>
 	</main>
